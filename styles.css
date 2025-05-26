@@ -1,7 +1,28 @@
-.btn{
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.btn {
     display: inline-block;
 }
 
-h1{
-    font-family: Arial, Helvetica, sans-serif, sans-serif;
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: #0e0a15;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #e0d8f4;
+    line-height: 1.6;
+    /* transition: all 0.3s -- transition to body:hover for example over 300ms*/
+}
+
+.navbar {
+    align-items: centre;
+    padding: 16px 24px;
+    background: linear-gradient(180deg, #0e0a15 0%, #1e1133 100%);
 }
