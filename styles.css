@@ -18,7 +18,7 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
     color: #e0d8f4;
     line-height: 1.6;
-    /* transition: all 0.3s -- transition to body:hover for example over 300ms*/
+    font-size: 24px;
 }
 
 .navbar {
