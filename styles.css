@@ -34,63 +34,9 @@ html, body {
   position: relative;
 }
 
-.fixed-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-  filter: brightness(50%)
-}
-
-@media (max-width: 600px) {
-  .fixed-bg {
-    background-image: url('images/background-gradient-portrait.jpg');
-  }
-}
-
-@media (min-width: 601px) {
-  .fixed-bg {
-    background-image: url('images/backrground-gradient-landscape.jpg');
-  }
-}
-
-p {
-    font-family: var(--main-font);
-}
-
-.home-card {
-  background: #211731;
-  border-radius: 12px;
-  display: block;
-  margin: 24px auto;
-  padding: 360px 24px 24px 24px;
-  width: 90%;
-  box-sizing: border-box;
-}
-
-@media (min-width: 600px) {
-    .home-card {
-    width: 70vw;
-    margin: 48px;
-  }
-}
-
 .subheading {
     font-family: var(--main-font);
     font-size: var(--subheading-font-size);
-}
-/*
-.navbar {
-    align-items: centre;
-    padding: 16px 24px;
-    background: linear-gradient(180deg, #0e0a15 0%, #1e1133 100%);
-}
-*/
-img {
-    max-width: 100%
+    margin-top: 18px;
+    margin-bottom: 24px;
 }
