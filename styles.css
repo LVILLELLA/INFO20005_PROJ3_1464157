@@ -5,20 +5,46 @@ html {
     box-sizing: inherit;
 }
 
+:root {
+    --main-font: Helvetica, Arial, sans-serif;
+    --head-font-size: 24px;
+    --subheading-font-size: 24px;
+}
+
 .btn {
     display: inline-block;
 }
 
 h1 {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: var(--main-font);
+    font-size: var(--head-font-size);
+
 }
 
 body {
-    background: #0e0a15;
-    font-family: 'Helvetica Neue', sans-serif;
+    background: #110c18;
     color: #e0d8f4;
     line-height: 1.6;
-    font-size: 24px;
+}
+
+p {
+    font-family: var(--main-font);
+}
+
+.home-card {
+    width: 900px;
+    height: 480px;
+    background: #211731;
+    border-radius: 24px;
+    display: block;
+    border-radius: 12px;
+    margin: 24px;
+    padding: 360px 24px 24px 24px;
+}
+
+.subheading {
+    font-family: var(--main-font);
+    font-size: var(--subheading-font-size);
 }
 
 .navbar {
