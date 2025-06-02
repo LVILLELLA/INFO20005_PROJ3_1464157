@@ -22,9 +22,42 @@ h1 {
 }
 
 body {
-    background: #110c18;
-    color: #e0d8f4;
+    color: rgb(228, 195, 255);
     line-height: 1.6;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fixed full-screen background layer */
+.fixed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Keeps it behind the content */
+}
+
+/* Media queries for the background image */
+@media (orientation: portrait) {
+  .fixed-bg {
+    background-image: url('images/background-gradient-portrait.jpg');
+  }
+}
+
+@media (orientation: landscape) {
+  .fixed-bg {
+    background-image: url('images/backrground-gradient-landscape.jpg');
+  }
 }
 
 p {
@@ -51,4 +84,8 @@ p {
     align-items: centre;
     padding: 16px 24px;
     background: linear-gradient(180deg, #0e0a15 0%, #1e1133 100%);
+}
+
+img {
+    max-width: 100%
 }
