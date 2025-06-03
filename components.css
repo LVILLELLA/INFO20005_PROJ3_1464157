@@ -110,16 +110,17 @@
         display: inline-block;
         width: 18px;
         height: 18px;
-        border-radius: 50%;
-        background-color: var(--color-dot);
+        border-radius: 20%;
+        border-color: var(--color-dot);
+        border-width: 3px;
+        border-style: solid;
+        background-color: transparent;
         margin: 4px;
         transition: background-color 0.2s ease;
     }
 
     .filter-dot:hover {
-        border-color: var(--color-primary);
-        border-width: 1px;
-        border-style: solid;
+        background-color: var(--color-primary);
     }
 
     .return-home {

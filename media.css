@@ -63,7 +63,40 @@ p {
         margin-left: 64px;
         margin-bottom: 12px;
     }
-}
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .modal img {
+        max-width: 80vw;
+        max-height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
+    }
+
+    #modal-close {
+        position: absolute;
+        top: 24px;
+        right: 36px;
+        font-size: 3rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+}   
 
 .icon-image {
     width: 80px;

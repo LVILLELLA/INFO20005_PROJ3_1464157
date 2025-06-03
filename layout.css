@@ -35,6 +35,8 @@
         width: 430px;
         height: 540px;
         margin: 24px;
+        padding-right: 8px;
+        text-wrap: wrap;
         box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
         background-color: var(--color-secondary);
         border-radius: 12px;
@@ -100,5 +102,75 @@
         align-items: center;
         justify-content: center;
         box-shadow: -2px -2px 4px rgba(255,255,255,0.1), 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .product-info-wrapper {
+        display: flex;;
+        flex-direction: column;
+        width: 90vw;
+        margin: 24px;
+        padding: 24px;
+        text-wrap: wrap;
+        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+        background-color: var(--color-secondary);
+        border-radius: 12px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .product-info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr;
+        grid-template-rows: 20em 8em auto;
+        gap: 48px;
+        width: 90vw;
+        align-items: start;
+    }
+
+    .focus-image {
+        justify-self: center;
+        max-width: 12em;
+        height: auto;
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+    }
+
+    .sml-image1 {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        margin-left: 24px;
+    }
+
+    .sml-image2 {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+
+    .focus-image,
+    .sml-image1,
+    .sml-image2 {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover; /* optional: trims to fit aspect ratio */
+        border-radius: 8px;
+    }
+    .text-column {
+        grid-row: 1 / 4;
+        grid-column: 3 / 4;
+        padding-right: 24px;
+    }
+
+    .product-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    .feature-list li {
+        margin: 0.5rem 2.5rem;
+        font-size: 1rem;
+        color: var(--color-text);
+        list-style-type: circle;
     }
 }
