@@ -66,13 +66,24 @@ body {
     margin: auto auto 12px 24px;
 }
 
+.short-desc {
+    font-size: var(--main-font-size);
+    font-family: var(--main-font);
+    margin: auto auto 12px 24px;
+}
+
 .item-cover-image-lg {
-    width: 12em;
+    width: 10em;
+    margin-top: auto;
+}
+
+.item-cover-image-md {
+    width: 14em;
     margin-top: auto;
 }
 
 .item-cover-image {
-    width: 20em;
+    width: 18em;
     margin-top: auto;
 }
 
@@ -83,7 +94,8 @@ body {
     color: white;
     font-weight: bolder;
     align-self: center;
-    margin: auto auto 12px 24px
+    margin: auto auto 12px 24px;
+    padding-bottom: 12px;
 }
 
 @media (min-width: 601px) {
