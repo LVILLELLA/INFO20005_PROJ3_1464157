@@ -15,6 +15,7 @@ html {
 }
 
 :root {
+    font-size: 16px;
     --main-font: Montserrat, sans-serif;
     --main-font-size: 18px;
     --head-font-size: 24px;
