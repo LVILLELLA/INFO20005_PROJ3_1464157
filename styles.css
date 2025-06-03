@@ -38,17 +38,13 @@ html {
     --color-text2: rgb(150, 132, 165);
     --color-dot: #0c0c0c;
     --color-dot-back: rgba(44, 44, 44, 0.7);
-    --color-image-back: rgba(255, 255, 255, 0.2);
+    --color-image-back: rgba(255, 255, 255, 0.8);
 }
 
 @media screen and (max-width: 600px) {
     :root {
         --space-unit: 0.75em;
     }
-}
-
-.btn {
-    display: inline-block;
 }
 
 .subheading {

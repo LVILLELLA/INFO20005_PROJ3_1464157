@@ -135,4 +135,18 @@
         align-self: start;
         margin-left: 16px;
     }
+    
+    .plus-button,
+    .minus-button {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 12px;;
+        box-shadow: none;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
 }

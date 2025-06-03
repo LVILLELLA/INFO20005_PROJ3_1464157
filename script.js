@@ -1,5 +1,3 @@
-//Javascript file
-
 var cart = {
     empty: false,
     numItem1: 0,
