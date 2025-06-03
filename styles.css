@@ -56,7 +56,7 @@ h1 {
         padding: 0 24px;
         
         box-sizing: border-box;
-        border: 6px solid #0a080f;
+        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
         background-color: rgba(33, 23, 49, 0.4);
         border-radius: 12px;
         overflow: hidden;
@@ -75,6 +75,22 @@ h1 {
         grid-template-columns: 1fr 1fr;
     }
 
+}
+
+@media (max-width: 600px) {
+    .home-card {
+        max-height: 540px;
+        box-sizing: border-box;
+        border-width: 6px;
+        border-style: solid;
+        border-color: #0a080f;
+        background-color: rgba(33, 23, 49, 0.4);
+        border-radius: 12px;
+        display: inline-block;
+        padding: 36px 36px;
+        overflow: hidden;
+        z-index: 0;
+    }
 }
 
 html, body {

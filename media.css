@@ -29,19 +29,6 @@ p {
 }
 
 @media (max-width: 600px) {
-    .home-card {
-        max-height: 540px;
-        box-sizing: border-box;
-        border-width: 6px;
-        border-style: solid;
-        border-color: #0a080f;
-        background-color: rgba(33, 23, 49, 0.4);
-        border-radius: 12px;
-        display: inline-block;
-        padding: 36px 36px;
-        overflow: hidden;
-        z-index: 0;
-    }
 
     .home-card-image {
         width: 60%;
