@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImg = document.getElementById('modal-img');
     const closeBtn = document.getElementById('modal-close');
 
-    const thumbnails = document.querySelectorAll('.focus-image, .sml-image1, .sml-image2');
+    const thumbnails = document.querySelectorAll('.focus-image, .focus-image-sm, .sml-image1, .sml-image2');
 
     thumbnails.forEach(img => {
         img.addEventListener('click', () => {
