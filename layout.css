@@ -1,0 +1,58 @@
+@media (min-width: 601px) {
+    .page-layout {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+    }
+
+    .flex-cards {
+        width: 70vw;
+        height: calc(5 * var(--card-height));
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 30vw;
+        height: 100vh;
+        padding: 24px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card {
+        width: 430px;
+        height: 430px;
+        margin: 24px;
+        background-color: white;
+        border-style: solid;
+        border-radius: 4px;
+        border-width: 4px;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    nav > img {
+        justify-self: start;
+    }
+
+    nav > input {
+        justify-self: center;
+    }
+
+    nav > div {
+        justify-self: end;
+    }
+}

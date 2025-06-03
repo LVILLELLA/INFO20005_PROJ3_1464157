@@ -11,6 +11,20 @@ html {
     --head-font-size: 24px;
     --subheading-font-size: 24px;
     --card-height: 600px;
+    --space-unit: 1em;
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 32px;
+    --space-lg: 48px;
+    --space-xl: 64px;
+    --space-xxl: 96px;
+}
+
+@media screen and (min-width: 601px) {
+    :root {
+        --space-unit: 1.25em;
+    }
 }
 
 .btn {
@@ -29,23 +43,6 @@ h1 {
     }
 
 @media (min-width: 601px) {
-    .page-layout {
-        display: flex;
-        flex-direction: row;
-        width: 100vw;
-    }
-
-    .flex-cards {
-        width: 70vw;
-        height: calc(5 * var(--card-height));
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-        padding: 24px;
-        box-sizing: border-box;
-        overflow-y: auto;
-    }
 
     .home-card {
         display: flex;
@@ -72,77 +69,12 @@ h1 {
         justify-content: center;
     }
 
-    .sidebar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 30vw;
-        height: 100vh;
-        padding: 24px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
+    
+    .product-card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .search-input {
-        width: 100%;
-        height: 48px;
-        padding: 12px;
-        border-radius: 16px;
-        border: none;
-        margin-bottom: 12px;
-        font-size: 18px;
-        padding: 16px;
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .sidebar-buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        margin-bottom: 12px;
-    }
-
-    .icon-button {
-        flex: 1;
-        background: rgba(0, 0, 0, 0.4);
-        color: white;
-        border: none;
-        border-radius: 16px;
-        cursor: pointer;
-    }
-
-    .sidebar-buttons > .icon-button + .icon-button {
-        margin-left: 12px;
-    }
-
-    .dot-nav {
-        list-style: none;
-        width: 64px;
-        align-items: center;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(44, 44, 44, 0.6);
-        border-radius: 40px;
-    }
-
-    .dot {
-        display: inline-block;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background-color: #0c0c0c;
-        margin: 32px;
-        transition: background-color 0.2s ease;
-    }
-
-    .dot:hover {
-        border-color: #8317ff;
-        border-width: 2px;
-        border-style: solid;
-    }
 }
 
 html, body {

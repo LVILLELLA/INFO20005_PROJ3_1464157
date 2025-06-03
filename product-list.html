@@ -7,8 +7,52 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="components.css">
 </head>
 <body>
     <div class="fixed-bg"></div>
+    <div class="page-layout">
+        <span class="product-card-grid">
+            <div class="product-card" data-category="protein" data-price="59.95"></div>
+            <div class="product-card" data-category="preworkout" data-price="39.95"></div>
+            <div class="product-card" data-category="creatine" data-price="29.95"></div>
+            <div class="product-card" data-category="recovery" data-price="34.95"></div>
+            <div class="product-card" data-category="vitamin" data-price="19.95"></div>
+            <div class="product-card" data-category="creatine" data-price="29.95"></div>
+            <div class="product-card" data-category="recovery" data-price="34.95"></div>
+            <div class="product-card" data-category="vitamin" data-price="19.95"></div>
+        </span>
+
+        <aside class="sidebar">
+            <section>
+                <img src="images/elite-logo1.png" alt="Elite Supplements logo" class="return-home">
+                <input type="text" placeholder="SEARCH PRODUCTS" class="search-input">
+                <div class="sidebar-buttons">         
+                    <button class="icon-button">
+                        <img src="images/cart-icon.png" alt="Cart" class="icon-image">
+                    </button>
+                    <button class="icon-button">
+                        <img src="images/menu-icon.png" alt="Menu" class="icon-image">
+                    </button>
+                </div>
+            </section>
+            <ul class="sort-dot-nav">
+                <li><a href="#sort-card1" class="sort-dot"></a></li>
+                <li><a href="#sort-card2" class="sort-dot"></a></li>
+                <li><a href="#sort-card3" class="sort-dot"></a></li>
+                <li><a href="#sort-card4" class="sort-dot"></a></li>
+                <li><a href="#sort-card5" class="sort-dot"></a></li>
+            </ul>
+            <ul class="filter-dot-nav">
+                <li><a href="#filter-card1" class="filter-dot"></a></li>
+                <li><a href="#filter-card2" class="filter-dot"></a></li>
+                <li><a href="#filter-card3" class="filter-dot"></a></li>
+                <li><a href="#filter-card4" class="filter-dot"></a></li>
+                <li><a href="#filter-card5" class="filter-dot"></a></li>
+            </ul>
+        </aside>
+    </div>
+
 </body>
 </html>
