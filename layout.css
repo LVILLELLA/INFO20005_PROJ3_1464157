@@ -30,13 +30,21 @@
     }
 
     .product-card {
+        display: flex;
+        flex-direction: column;
         width: 430px;
-        height: 430px;
+        height: 540px;
         margin: 24px;
-        background-color: white;
-        border-style: solid;
-        border-radius: 4px;
-        border-width: 4px;
+        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+        background-color: var(--color-secondary);
+        border-radius: 12px;
+        justify-items: center;
+        align-items: center;
+    }
+  
+    .product-card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     nav {
