@@ -1,17 +1,22 @@
 @media (min-width: 601px) {
     .search-input {
         width: 100%;
-        height: 48px;
+        height: 64px;
         margin-top: 24px;
         border-radius: 16px;
         border: none;
         margin-bottom: 12px;
-        font-size: 18px;
         padding: 16px;
+
+        font-size: 18px;
+        color: var(--color-text);
+
         background-color: rgba(0, 0, 0, 0.4);
         box-shadow: inset -1px -1px 2px rgb(180, 180, 180, 0.5), inset 2px 2px 6px black;
     }
-
+    ::placeholder {
+        color: var(--color-text2);
+    }
     .sidebar-buttons {
         display: flex;
         flex-direction: row;
@@ -76,11 +81,11 @@
     }
     .sort-dot {
         display: inline-block;
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
         border-radius: 50%;
         background-color: var(--color-dot);
-        margin: 8px;
+        margin: 4px;
         transition: background-color 0.2s ease;
     }
 
@@ -103,11 +108,11 @@
     }
     .filter-dot {
         display: inline-block;
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
         border-radius: 50%;
         background-color: var(--color-dot);
-        margin: 8px;
+        margin: 4px;
         transition: background-color 0.2s ease;
     }
 
@@ -121,5 +126,12 @@
         margin: 24px auto;
         width: 100%;
         height: auto;
+    }
+
+    .sub-icon-image {
+        width: 36px;
+        height: auto;
+        align-self: start;
+        margin-left: 16px;
     }
 }

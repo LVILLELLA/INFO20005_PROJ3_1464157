@@ -32,14 +32,15 @@ html {
     --color-primary: #6216a2;
     --color-secondary: rgba(33, 23, 49, 0.4);
 
-    --color-text: rgb(228, 195, 255);
+    --color-text: rgb(202, 175, 224);
+    --color-text2: rgb(150, 132, 165);
     --color-dot: #0c0c0c;
     --color-dot-back: rgba(44, 44, 44, 0.7);
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (max-width: 600px) {
     :root {
-        --space-unit: 1.25em;
+        --space-unit: 0.75em;
     }
 }
 
