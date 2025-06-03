@@ -8,37 +8,68 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="media.css">
 </head>
-<nav>
-
-</nav>
 <body>
     <!--div class for background image-->
     <div class="fixed-bg"></div>
-    <span class="home-card">
-        <img src="images/elite-logo1.png" alt="Elite Supplements Logo" class="home-card-image top-card">
-        <p class="subheading">OUR MISSION IS SIMPLE - </p>
-        <p>TO HELP YOU GO BEYOND YOUR BEST, EVERYDAY.</p>
-    </span>
-    <span class="home-card">
-        <img src="images/product1-image1.png" alt="Gold Standard Whey" class="home-card-image">
-        <p class="subheading">GOLD STANDARD | 100% WHEY </p>
-        <p>WORLD'S #1 SELLING PROTEIN POWDER</p>
-    </span>
-    <span class="home-card">
-        <img src="images/product2-image1.png" alt="Disorder Pre Workout" class="home-card-image">
-        <p class="subheading">DISORDER | MIDNIGHT SAPPHIRE </p>
-        <p>TRY YOUR FAVOURITE PRE WORKOUT IN A BRAND NEW, 
-            EXCLUSIVE FLAVOUR ONLY AVAILABLE AT ELITE SUPPLEMENTS</p>
-    </span>
-    <span class="home-card">
-        <img src="images/product3-image1.png" alt="Max Shred Creatine" class="home-card-image">
-        <p class="subheading">FREE MAX'S CREATINE | SHRED SYSTEM </p>
-        <p>BUILD STRONG, LEAN MUSCLE</p>
-    </span>
-    <span class="home-card">
-        <img src="images/product4-image1.png" alt="Sleep Aid Recovery" class="home-card-image card-four">
-        <p class="subheading">SLEEP AID | BACK IN STOCK </p>
-        <p>RECOVER FAST SO YOU CAN TAKE ON THE NEXT DAY</p>
-    </span>
+    <div class="page-layout">
+        <div class="flex-cards">
+            <span class="home-card" id="card1">
+                <img src="images/elite-logo1.png" alt="Elite Supplements Logo" class="home-card-image top-card">
+                <div class="home-card-text">
+                    <p class="subheading">OUR MISSION IS SIMPLE - </p>
+                    <p>TO HELP YOU GO BEYOND YOUR BEST, EVERYDAY.</p>
+                </div>
+            </span>
+            <span class="home-card" id="card2">
+                <img src="images/product1-image1.png" alt="Gold Standard Whey" class="home-card-image">
+                <div class="home-card-text">
+                    <p class="subheading">GOLD STANDARD | 100% WHEY </p>
+                    <p>WORLD'S #1 SELLING PROTEIN POWDER</p>
+                </div>
+            </span>
+            <span class="home-card" id="card3">
+                <img src="images/product2-image1.png" alt="Disorder Pre Workout" class="home-card-image">
+                <div class="home-card-text">
+                    <p class="subheading">DISORDER | MIDNIGHT SAPPHIRE </p>
+                    <p>TRY YOUR FAVOURITE PRE WORKOUT IN A BRAND NEW, 
+                    EXCLUSIVE FLAVOUR ONLY AVAILABLE AT ELITE SUPPLEMENTS</p>
+                </div>
+            </span>
+            <span class="home-card" id="card4">
+                <img src="images/product3-image1.png" alt="Max Shred Creatine" class="home-card-image">
+                <div class="home-card-text">
+                    <p class="subheading">FREE MAX'S CREATINE | SHRED SYSTEM </p>
+                    <p>BUILD STRONG, LEAN MUSCLE</p>
+                </div>
+            </span>
+            <span class="home-card" id="card5">
+                <img src="images/product4-image1.png" alt="Sleep Aid Recovery" class="home-card-image card-four">
+                <div class="home-card-text">
+                    <p class="subheading">SLEEP AID | BACK IN STOCK </p>
+                    <p>RECOVER FAST SO YOU CAN TAKE ON THE NEXT DAY</p>
+                </div>
+            </span>
+        </div>
+
+        <aside class="sidebar">
+            <input type="text" placeholder="SEARCH PRODUCTS" class="search-input">
+            <div class="sidebar-buttons">         
+                <button class="icon-button">
+                    <img src="images/cart-icon.png" alt="Cart" class="icon-image">
+                </button>
+                <button class="icon-button">
+                    <img src="images/menu-icon.png" alt="Menu" class="icon-image">
+                </button>
+            </div>
+            <ul class="dot-nav">
+                <li><a href="#card1" class="dot"></a></li>
+                <li><a href="#card2" class="dot"></a></li>
+                <li><a href="#card3" class="dot"></a></li>
+                <li><a href="#card4" class="dot"></a></li>
+                <li><a href="#card5" class="dot"></a></li>
+            </ul>
+        </aside>
+    </div>
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -9,6 +10,7 @@ html {
     --main-font: Helvetica, Arial, sans-serif;
     --head-font-size: 24px;
     --subheading-font-size: 24px;
+    --card-height: 600px;
 }
 
 .btn {
@@ -21,9 +23,126 @@ h1 {
 
 }
 
-body {
-    color: rgb(228, 195, 255);
-    line-height: 1.6;
+    body {
+        color: rgb(228, 195, 255);
+        line-height: 1.6;
+    }
+
+@media (min-width: 601px) {
+    .page-layout {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+    }
+
+    .flex-cards {
+        width: 70vw;
+        height: calc(5 * var(--card-height));
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    .home-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 24px;
+        
+        width: 100%;
+        height: var(--card-height);
+        padding: 0 24px;
+        
+        box-sizing: border-box;
+        border: 6px solid #0a080f;
+        background-color: rgba(33, 23, 49, 0.4);
+        border-radius: 12px;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .home-card-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 30vw;
+        height: 100vh;
+        padding: 24px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 48px;
+        padding: 12px;
+        border-radius: 16px;
+        border: none;
+        margin-bottom: 12px;
+        font-size: 18px;
+        padding: 16px;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .icon-button {
+        flex: 1;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: none;
+        border-radius: 16px;
+        cursor: pointer;
+    }
+
+    .sidebar-buttons > .icon-button + .icon-button {
+        margin-left: 12px;
+    }
+
+    .dot-nav {
+        list-style: none;
+        width: 64px;
+        align-items: center;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(44, 44, 44, 0.6);
+        border-radius: 40px;
+    }
+
+    .dot {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #0c0c0c;
+        margin: 32px;
+        transition: background-color 0.2s ease;
+    }
+
+    .dot:hover {
+        border-color: #8317ff;
+        border-width: 2px;
+        border-style: solid;
+    }
 }
 
 html, body {
