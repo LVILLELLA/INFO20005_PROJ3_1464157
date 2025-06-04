@@ -5,6 +5,7 @@ function loadHeader() {
         .then(data => {
             document.getElementById('header').innerHTML = data;
             initialiseSearch();
+            setupMenuToggle();
         })
         .catch(error => console.error('Header load failed:', error));
 }
@@ -20,14 +21,42 @@ document.addEventListener('DOMContentLoaded', () => {
         loadHeader();
     } else {
         initialiseSearch();
+        setupMenuToggle();
     }
 });
+
+// Slide out menu
+function setupMenuToggle() {
+    const menuButton = document.querySelector('.menu-button');
+    const menuOverlay = document.querySelector('.slide-menu-overlay');
+    const closeButton = document.querySelector('.close-menu');
+    const backgroundClick = document.querySelector('.overlay-bg');
+
+    if (!menuButton || !menuOverlay || !closeButton || !backgroundClick) return;
+
+    menuButton.addEventListener('click', () => {
+        console.log("Menu button clicked");
+        menuOverlay.classList.add('active');
+    });
+
+    closeButton.addEventListener('click', () => {
+        console.log("Close button clicked");
+        menuOverlay.classList.remove('active');
+    });
+
+    backgroundClick.addEventListener('click', () => {
+        console.log("Background clicked");
+        menuOverlay.classList.remove('active');
+    });
+}
 
 // Modal image viewer
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const closeBtn = document.getElementById('modal-close');
+
+    if (!modal || !modalImg || !closeBtn) return;
 
     const thumbnails = document.querySelectorAll('.focus-image, .focus-image-sm, .sml-image1, .sml-image2');
 
@@ -55,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Sort & Filter Logic
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.product-card-grid');
+
+    if (!grid) return;
+
     const allLinks = Array.from(grid.children);
     const products = allLinks.map(link => link.querySelector('.product-card'));
 

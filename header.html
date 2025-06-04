@@ -1,35 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header element</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/media.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav> 
-        <div class="header-img">
-            <a href="index.html">
-                <img src="images/elite-logo1.png" alt="Elite Supplements logo" class="return-home">
-            </a>
+<nav> 
+    <div class="header-img">
+        <a href="index.html">
+            <img src="images/elite-logo1.png" alt="Elite Supplements logo" class="return-home">
+        </a>
+    </div>
+    <div class="search-wrapper">
+        <input type="text" placeholder="SEARCH PRODUCTS" class="search-input">
+    </div>
+    <div>
+        <button class="icon-button">
+            <img src="images/cart-icon.png" alt="Cart" class="icon-image">
+        </button>
+        <button class="icon-button menu-button">
+            <img src="images/menu-icon.png" alt="Menu" class="icon-image">
+        </button>
+    </div>
+    <div class="slide-menu-overlay">
+        <div class="overlay-bg"></div>
+        <div class="slide-menu">
+            <button class="close-menu">&times;</button>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-list.html">Products</a></li>
+            <li><a href="#">Next item</a></li>
+            </ul>
         </div>
-        <div class="search-wrapper">
-            <input type="text" placeholder="SEARCH PRODUCTS" class="search-input">
-        </div>
-        <div>
-            <button class="icon-button">
-                <img src="images/cart-icon.png" alt="Cart" class="icon-image">
-            </button>
-            <button class="icon-button">
-                <img src="images/menu-icon.png" alt="Menu" class="icon-image">
-            </button>
-        </div>
-    </nav>
-</body>
-</html>
+    </div>
+</nav>
