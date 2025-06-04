@@ -51,6 +51,7 @@
   
     .product-card-grid {
         display: grid;
+        place-items: center;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -75,7 +76,7 @@
         margin: 24px 24px auto auto;
     }
 
-    nav > input {
+    nav > div > input {
         justify-self: center;
         height: 4em;
         width: 100%;
