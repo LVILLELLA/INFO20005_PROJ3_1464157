@@ -69,15 +69,16 @@
     }
 
     .sort-dot-nav {
+        padding: 12px;
         list-style: none;
-        width: 48px;
+        width: auto;
         align-items: center;
         margin: 12px;
         display: flex;
         flex-direction: column;
         background-color: var(--color-dot-back);
         border-radius: 32px;
-        padding-top: 8px;
+        align-items: start;
     }
     .sort-dot {
         display: inline-block;
@@ -89,22 +90,17 @@
         transition: background-color 0.2s ease;
     }
 
-    .sort-dot:hover {
-        border-color: var(--color-primary);
-        border-width: 1px;
-        border-style: solid;
-    }
-
     .filter-dot-nav {
+        padding: 12px;
         list-style: none;
-        width: 48px;
+        width: auto;
         align-items: center;
         margin: 12px;
         display: flex;
         flex-direction: column;
         background-color: var(--color-dot-back);
         border-radius: 32px;
-        padding-top: 8px;
+        align-items: start;
     }
     .filter-dot {
         display: inline-block;
@@ -119,7 +115,38 @@
         transition: background-color 0.2s ease;
     }
 
-    .filter-dot:hover {
+    .sort-link {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .search-options {
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-text {
+        text-decoration: none;
+        color: var(--color-text);
+        display: flex;
+        flex-direction: row;
+        width: 16em;
+        padding-left: 24px;
+    }
+
+    .filter-link {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sort-dot.active {
+        border-color: var(--color-primary);
+        border-width: 2px;
+        border-style: solid;
+    }
+
+    .filter-dot.active {
         background-color: var(--color-primary);
     }
 
