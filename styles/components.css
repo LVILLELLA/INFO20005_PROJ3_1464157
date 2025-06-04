@@ -19,6 +19,7 @@
         position: relative;
         display: inline-block;
         width: 100%;
+        box-sizing: border-box;
     }
 
     .search-suggestions:empty {
@@ -38,10 +39,11 @@
         border-top: none;
         border-radius: 0 0 8px 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        z-index: 999;
+        z-index: 9999;
         padding: 0;
         margin: 0;
         list-style: none;
+        pointer-events: auto;
     }
 
     .search-suggestions li {

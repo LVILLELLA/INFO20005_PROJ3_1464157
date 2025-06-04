@@ -13,13 +13,13 @@
 
 @media (max-width: 600px) {
   .fixed-bg {
-    background-image: url('images/background-gradient-portrait.jpg');
+    background-image: url('../images/background-gradient-portrait.jpg');
     }
 }
 
 @media (min-width: 601px) {
     .fixed-bg {
-        background-image: url('images/backrground-gradient-landscape.jpg');
+        background-image: url('../images/background-gradient-landscape.jpg');
     }
 
 }

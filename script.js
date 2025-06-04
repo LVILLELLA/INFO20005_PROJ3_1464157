@@ -1,37 +1,29 @@
-var cart = {
-    empty: false,
-    numItem1: 0,
-    numItem2: 0,
-    numItem3: 0,
-    numItem4: 0,
-    numItem5: 0,
-    numItem6: 0,
-    numItem7: 0,
-    numItem8: 0
-}
-
-//Print header
+// Load header and initialize search
 function loadHeader() {
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header').innerHTML = data;
-    })
-    .catch(error => console.error('Header load failed:', error));
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+            initialiseSearch();
+        })
+        .catch(error => console.error('Header load failed:', error));
 }
 
 function goHome() {
-  window.location.href = 'index.html';
+    window.location.href = 'index.html';
 }
 
+// Run header logic
 document.addEventListener('DOMContentLoaded', () => {
-  const shouldLoadHeader = document.body.dataset.loadHeader === "true";
-  if (shouldLoadHeader) {
-    loadHeader();
-  }
+    const shouldLoadHeader = document.body.dataset.loadHeader === "true";
+    if (shouldLoadHeader) {
+        loadHeader();
+    } else {
+        initialiseSearch();
+    }
 });
 
-//Image modal box feature
+// Modal image viewer
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
@@ -60,13 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+// Sort & Filter Logic
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.product-card-grid');
     const allLinks = Array.from(grid.children);
     const products = allLinks.map(link => link.querySelector('.product-card'));
 
-    //Search functionality
+    // Sort
     document.querySelectorAll('.sort-link').forEach(link => {
         link.addEventListener('click', e => {
             e.preventDefault();
@@ -88,8 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 sorted.sort((a, b) => a.querySelector('.cover-title').textContent.localeCompare(b.querySelector('.cover-title').textContent));
             } else if (label.includes('Z-A')) {
                 sorted.sort((a, b) => b.querySelector('.cover-title').textContent.localeCompare(a.querySelector('.cover-title').textContent));
-            } else {
-                sorted = products;
             }
 
             grid.innerHTML = '';
@@ -102,29 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.sort-link')?.click();
     });
 
-    //Filter functionality
+    // Filter
     document.querySelectorAll('.filter-link').forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            link.querySelector('.filter-dot').classList.toggle('active');
+            link.querySelector('.search-text').classList.toggle('active');
 
-        link.querySelector('.filter-dot').classList.toggle('active');
-        link.querySelector('.search-text').classList.toggle('active');
+            const activeFilters = Array.from(document.querySelectorAll('.filter-link .search-text.active'))
+                .map(el => el.textContent.trim().toLowerCase());
 
-        const activeFilters = Array.from(document.querySelectorAll('.filter-link .search-text.active'))
-            .map(el => el.textContent.trim().toLowerCase());
+            products.forEach(card => {
+                const price = parseFloat(card.dataset.price);
+                const category = card.dataset.category.toLowerCase();
+                const wrapper = card.closest('a');
 
-        products.forEach(card => {
-            const price = parseFloat(card.dataset.price);
-            const category = card.dataset.category.toLowerCase();
-            const wrapper = card.closest('a');
-
-            let visible = true;
-
-            if (activeFilters.length === 0) {
-                visible = true; // Show all if no filters are selected
-            } else {
-                visible = activeFilters.some(filter => {
-                    if (filter === 'protein' || filter === 'creatine' || filter === 'pre workout') {
+                let visible = activeFilters.length === 0 || activeFilters.some(filter => {
+                    if (['protein', 'creatine', 'pre workout'].includes(filter)) {
                         return category.includes(filter.replace(/\s/g, ''));
                     } else if (filter === 'under $100') {
                         return price < 100;
@@ -133,36 +117,56 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     return false;
                 });
-            }
 
-            wrapper.style.display = visible ? 'inline-block' : 'none';
+                wrapper.style.display = visible ? 'inline-block' : 'none';
+            });
         });
-    });
     });
 });
 
-//Search functionality
-document.addEventListener('DOMContentLoaded', () => {
+// Search Logic
+function initialiseSearch() {
     const searchInputs = document.querySelectorAll('.search-input');
     const isProductListPage = window.location.pathname.includes('product-list.html');
     const storedQuery = sessionStorage.getItem('searchQuery') || '';
 
+    const productList = [
+        { name: "GOLD STANDARD 100% WHEY", link: "product1.html" },
+        { name: "DISORDER PRE WORKOUT", link: "product2.html" },
+        { name: "SHRED SYSTEM CREATINE", link: "product3.html" },
+        { name: "SLEEP AID RECOVERY", link: "product4.html" },
+        { name: "EMRALD LABS CREATINE", link: "product5.html" },
+        { name: "EMRALD LABS PRE LOAD BLACK", link: "product6.html" },
+        { name: "R1 WHEY ISOLATE PROTEIN", link: "product7.html" },
+        { name: "PER4M PRE WORKOUT", link: "product8.html" }
+    ];
+
+    function getMatches(query) {
+        return productList.filter(p => p.name.toLowerCase().includes(query.toLowerCase())).slice(0, 5);
+    }
+
     searchInputs.forEach(input => {
         const suggestionBox = document.createElement('ul');
-        suggestionBox.classList.add('search-suggestions');
-        suggestionBox.style.position = 'absolute';
-        suggestionBox.style.background = '#fff';
-        suggestionBox.style.zIndex = '1000';
-        suggestionBox.style.listStyle = 'none';
-        suggestionBox.style.margin = '0';
-        suggestionBox.style.padding = '0';
-        suggestionBox.style.width = input.offsetWidth + 'px';
-        suggestionBox.style.display = 'none';
+        suggestionBox.className = 'search-suggestions';
+        input.parentNode.style.position = 'relative';
+        suggestionBox.style.cssText = `
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            z-index: 1000;
+            display: none;
+        `;
 
         input.parentNode.appendChild(suggestionBox);
 
         input.addEventListener('input', () => {
-            const query = input.value.toLowerCase();
+            const query = input.value.trim();
             suggestionBox.innerHTML = '';
 
             if (!query) {
@@ -170,14 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const matches = Array.from(document.querySelectorAll('[data-name]'))
-                .map(el => ({
-                    name: el.dataset.name,
-                    link: el.closest('a')?.href || '#'
-                }))
-                .filter(item => item.name.toLowerCase().includes(query))
-                .slice(0, 5); // Limit suggestions
-
+            const matches = getMatches(query);
             if (matches.length === 0) {
                 suggestionBox.style.display = 'none';
                 return;
@@ -188,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.textContent = match.name;
                 li.style.padding = '8px 12px';
                 li.style.cursor = 'pointer';
-                li.addEventListener('click', () => {
+                li.addEventListener('mousedown', () => {
                     window.location.href = match.link;
                 });
                 suggestionBox.appendChild(li);
@@ -202,51 +199,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         input.addEventListener('keydown', e => {
+            const query = input.value.trim();
             if (e.key === 'Enter') {
-                const query = input.value.trim();
-
                 if (!isProductListPage && query) {
                     sessionStorage.setItem('searchQuery', query);
                     window.location.href = 'product-list.html';
-                }
-
-                if (isProductListPage && query) {
-                    const productLinks = document.querySelectorAll('.product-card-grid > a');
-                    const grid = document.querySelector('.product-card-grid');
-
-                    let matchesFound = false;
-
-                    productLinks.forEach(link => {
-                        const card = link.querySelector('.product-card');
-                        const name = card.dataset.name.toLowerCase();
-                        const match = name.includes(query.toLowerCase());
-
-                        link.style.display = match ? 'inline-block' : 'none';
-                        if (match) matchesFound = true;
-                    });
-
-                    // Remove any previous message
-                    const oldMessage = document.getElementById('no-results-message');
-                    if (oldMessage) oldMessage.remove();
-
-                    // If no matches, show message
-                    if (!matchesFound) {
-                        const message = document.createElement('div');
-                        message.id = 'no-results-message';
-                        message.textContent = 'NO ITEMS FOUND';
-                        message.style.fontSize = '24px';
-                        message.style.color = 'var(--color-text)';
-                        message.style.padding = '48px';
-                        message.style.textAlign = 'center';
-                        message.style.gridColumn = '1 / -1';
-                        grid.appendChild(message);
-                    }
                 }
             }
         });
     });
 
-    // Auto-search when landing on product list page
     if (isProductListPage && storedQuery) {
         const input = document.querySelector('.search-input');
         if (input) {
@@ -260,4 +222,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         sessionStorage.removeItem('searchQuery');
     }
-});
+}
