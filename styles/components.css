@@ -67,6 +67,7 @@
     }
 
     .icon-button {
+        position: relative;
         flex: 1;
         background: rgba(0, 0, 0, 0.4);
         color: white;
@@ -253,5 +254,17 @@
         display: block;
         object-fit: cover;
         border-radius: 8px;
+    }
+
+    .cart-count-bubble {
+        position: absolute;
+        top: 6px;
+        right: 12px;
+        background: red;
+        color: white;
+        font-size: 0.8rem;
+        padding: 2px 6px;
+        border-radius: 50%;
+        font-weight: bold;
     }
 }

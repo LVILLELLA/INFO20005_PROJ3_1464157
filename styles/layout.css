@@ -134,7 +134,7 @@
         align-items: center;
     }
 
-    .text-page-wrapper {
+    .stack {
         display: flex;
         flex-direction: column;
         width: auto;
@@ -150,8 +150,22 @@
         align-items: left;        
     }
 
-    .text-page-wrapper > h1 {
-        align-self: center;        
+    .stack > p + h3 {
+        margin-top: 2rem;
+    }
+
+    .stack > p + h3 {
+        margin-top: 2rem;
+    }
+
+    .stack > h3 {
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+
+    .title-text {
+        font-size: 2rem;
+        margin: 0 auto 0 auto;
     }
 
     .text-column {
