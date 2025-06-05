@@ -255,3 +255,81 @@ function initialiseSearch() {
         sessionStorage.removeItem('searchQuery');
     }
 }
+
+//Cart quantity selector
+document.addEventListener('DOMContentLoaded', () => {
+    const quantityDisplay = document.querySelector('.quantity-selector');
+    const plusButton = document.querySelector('.plus-button');
+    const minusButton = document.querySelector('.minus-button');
+
+    if (!quantityDisplay || !plusButton || !minusButton) return;
+
+    let quantity = parseInt(quantityDisplay.textContent, 10);
+
+    plusButton.addEventListener('click', () => {
+        quantity++;
+        quantityDisplay.textContent = quantity;
+    });
+
+    minusButton.addEventListener('click', () => {
+        if (quantity > 1) {
+        quantity--;
+        quantityDisplay.textContent = quantity;
+        }
+    });
+});
+
+//Add items to cart
+document.addEventListener('DOMContentLoaded', () => {
+    const quantityDisplay = document.querySelector('.quantity-selector');
+    const plusButton = document.querySelector('.plus-button');
+    const minusButton = document.querySelector('.minus-button');
+    const addToCartButton = document.querySelector('.add-to-cart');
+
+    // Use the product name as the ID
+    const productName = addToCartButton?.dataset.name;
+
+    if (!quantityDisplay || !plusButton || !minusButton || !addToCartButton || !productName) return;
+
+    let quantity = parseInt(quantityDisplay.textContent, 10);
+
+    plusButton.addEventListener('click', () => {
+        quantity++;
+        quantityDisplay.textContent = quantity;
+    });
+
+    minusButton.addEventListener('click', () => {
+        if (quantity > 1) {
+        quantity--;
+        quantityDisplay.textContent = quantity;
+        }
+    });
+
+    addToCartButton.addEventListener('click', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+        // Use productName as the unique key
+        if (cart[productName]) {
+        cart[productName] += quantity;
+        } else {
+        cart[productName] = quantity;
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCountBubble();
+
+        console.log("Cart updated:", cart);
+    });
+});
+
+//Update bubble quantity
+function updateCartCountBubble() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const total = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+
+    document.querySelectorAll('.cart-count-bubble').forEach(bubble => {
+        bubble.textContent = total;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', updateCartCountBubble);
