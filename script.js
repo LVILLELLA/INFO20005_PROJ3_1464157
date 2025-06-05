@@ -4,14 +4,38 @@ function loadHeader() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
-            initialiseSearch();
-            setupMenuToggle();
+            setupMenuToggle(); // <- move here, after injection
+            initialiseSearch(); // if needed
         })
         .catch(error => console.error('Header load failed:', error));
 }
 
 function goHome() {
     window.location.href = 'index.html';
+}
+
+//Side menu
+function setupMenuToggle() {
+    const menuButton = document.querySelector('.menu-button');
+    const overlay = document.querySelector('.slide-menu-overlay');
+    const slideMenu = document.querySelector('.slide-menu');
+    const closeButton = document.querySelector('.close-menu');
+    const bgClick = document.querySelector('.overlay-bg');
+
+    if (!menuButton || !overlay || !slideMenu) return;
+
+    menuButton.addEventListener('click', () => {
+        overlay.classList.add('active');
+        slideMenu.classList.add('active');
+    });
+
+    const closeMenu = () => {
+        overlay.classList.remove('active');
+        slideMenu.classList.remove('active');
+    };
+
+    closeButton?.addEventListener('click', closeMenu);
+    bgClick?.addEventListener('click', closeMenu);
 }
 
 // Run header logic
@@ -24,31 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setupMenuToggle();
     }
 });
-
-// Slide out menu
-function setupMenuToggle() {
-    const menuButton = document.querySelector('.menu-button');
-    const menuOverlay = document.querySelector('.slide-menu-overlay');
-    const closeButton = document.querySelector('.close-menu');
-    const backgroundClick = document.querySelector('.overlay-bg');
-
-    if (!menuButton || !menuOverlay || !closeButton || !backgroundClick) return;
-
-    menuButton.addEventListener('click', () => {
-        console.log("Menu button clicked");
-        menuOverlay.classList.add('active');
-    });
-
-    closeButton.addEventListener('click', () => {
-        console.log("Close button clicked");
-        menuOverlay.classList.remove('active');
-    });
-
-    backgroundClick.addEventListener('click', () => {
-        console.log("Background clicked");
-        menuOverlay.classList.remove('active');
-    });
-}
 
 // Modal image viewer
 document.addEventListener('DOMContentLoaded', () => {
