@@ -267,7 +267,8 @@
     }
     
     .plus-button,
-    .minus-button {
+    .minus-button,
+    .remove-btn {
         background: none;
         border: none;
         padding: 0;
@@ -279,7 +280,8 @@
         justify-content: center;
         color: white;
     }
-        .focus-image {
+
+    .focus-image {
         justify-self: center;
         max-width: 12em;
         height: auto;

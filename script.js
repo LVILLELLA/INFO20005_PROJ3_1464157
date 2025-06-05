@@ -333,3 +333,91 @@ function updateCartCountBubble() {
 }
 
 document.addEventListener('DOMContentLoaded', updateCartCountBubble);
+
+//Cart page functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const cartContainer = document.getElementById('cart-items');
+    const subtotalDisplay = document.getElementById('cart-subtotal');
+
+    const productData = {
+        "GOLD STANDARD 100% WHEY": { price: 48.90, image: "images/product1-image1.png" },
+        "DISORDER PRE WORKOUT": { price: 69.90, image: "images/product2-image1.png" },
+        "SHRED SYSTEM CREATINE": { price: 164.90, image: "images/product3-image1.png" },
+        "SLEEP AID RECOVERY": { price: 69.90, image: "images/product4-image1.png" },
+        "EMRALD LABS CREATINE": { price: 18.90, image: "images/product5-image1.png" },
+        "EMRALD LABS PRE LOAD BLACK": { price: 74.90, image: "images/product6-image1.png" },
+        "R1 WHEY ISOLATE PROTEIN": { price: 119.90, image: "images/product7-image1.png" },
+        "PER4M PRE WORKOUT": { price: 79.90, image: "images/product8-image1.png" }
+    };
+
+    function renderCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        cartContainer.innerHTML = '';
+        let subtotal = 0;
+
+        for (const [productName, quantity] of Object.entries(cart)) {
+            const { price, image } = productData[productName] || {};
+            const itemTotal = price * quantity;
+            subtotal += itemTotal;
+
+            const item = document.createElement('div');
+            item.className = 'cart-item';
+            item.innerHTML = `
+                <img src="${image}" alt="${productName}" class="cart-item-image">
+                <div class="cart-item-info">
+                    <h2>${productName}</h2>
+                    <p>Price: $${price.toFixed(2)}</p>
+                    <div class="quantity-box">
+                        <button class="minus-button" data-name="${productName}">
+                            <img src="images/minus-icon.png" alt="minus icon" class="minus-icon">
+                        </button> 
+                        <p class="quantity-selector">${quantity}</p>
+                        <button class="plus-button" data-name="${productName}">
+                            <img src="images/plus-icon.png" alt="plus icon" class="plus-icon">
+                        </button> 
+                        <button class="remove-btn" data-name="${productName}">
+                            <img src="images/remove-icon.png" alt="remove icon" class="remove-icon">
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            item.querySelector('.minus-button').addEventListener('click', () => updateQuantity(productName, quantity - 1));
+            item.querySelector('.plus-button').addEventListener('click', () => updateQuantity(productName, quantity + 1));
+            item.querySelector('.remove-btn').addEventListener('click', () => removeItem(productName));
+
+            cartContainer.appendChild(item);
+        }
+
+        subtotalDisplay.textContent = `$${subtotal.toFixed(2)}`;
+        updateCartCountBubble();
+    }
+
+    function updateQuantity(productName, newQuantity) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        if (newQuantity < 1) {
+            delete cart[productName];
+        } else {
+            cart[productName] = newQuantity;
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+
+    function removeItem(productName) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        delete cart[productName];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+
+    function updateCartCountBubble() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        const total = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+        document.querySelectorAll('.cart-count-bubble').forEach(bubble => {
+            bubble.textContent = total;
+        });
+    }
+
+    renderCart();
+});

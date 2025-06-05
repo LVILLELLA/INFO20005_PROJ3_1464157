@@ -168,7 +168,8 @@
     }
 
     .minus-icon,
-    .plus-icon {
+    .plus-icon,
+    .remove-icon {
         width: 48px;
         height: auto;
         background: none;
@@ -177,12 +178,14 @@
     }
 
     .minus-icon:hover,
-    .plus-icon:hover {
+    .plus-icon:hover,
+    .remove-icon:hover {
         background-color: var(--color-secondary);
     }
 
     .minus-icon:active,
-    .plus-icon:active {
+    .plus-icon:active,
+    .remove-icon:active {
         background-color: white;;
     }
 
