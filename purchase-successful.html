@@ -15,19 +15,18 @@
 <body data-load-header="true">
     <div id="header"></div>
     <div class="fixed-bg"></div>
+    <div class="thank-you-msg">
+        <h1>YOUR ORDER HAS BEEN CONFIRMED!</h1>
+        <img src="images/tick-icon.png" alt="tick icon" class="tick-icon">
+        <h1>THANK YOU</h1>
+        <p>Redirecting you to the home page</p>
+    </div>
 
-    <main class="cart-page">
-        <section class="cart-items" id="cart-items"></section>
-        <div class="cart-summary">
-        <div>
-            <p class="subtotal-label">SUBTOTAL:</p>
-            <p class="subtotal-value" id="cart-subtotal">$0.00</p>
-            <p class="shipping-note">Shipping price calculated at checkout</p>
-        </div>
-        <a href="checkout.html" class="checkout-button">CHECKOUT</a>
-        </div>
-    </main>
-
+    <script>
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 5000);
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

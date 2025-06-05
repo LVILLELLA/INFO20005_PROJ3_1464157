@@ -421,3 +421,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderCart();
 });
+
+//Checkout page authentication
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('checkout-form');
+    form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+            alert("Please ensure all fields are correctly filled.");
+            return;
+        }
+        e.preventDefault();
+        window.location.href = 'purchase-successful.html';
+    });
+});

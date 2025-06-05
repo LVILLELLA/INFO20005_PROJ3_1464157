@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES - Checkout</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/media.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body data-load-header="true">
+    <main class="checkout-page">
+    <div id="header"></div>
+    <div class="fixed-bg"></div>
+    <h1 class="title-text">CHECKOUT</h1>
+    <form id="checkout-form" class="checkout-form">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label>First Name:
+                <input type="text" name="firstName" required pattern="^[A-Z][a-zA-Z]{1,49}$">
+            </label>
+            <label>Last Name:
+                <input type="text" name="lastName" required pattern="^[A-Z][a-zA-Z]{1,49}$">
+            </label>
+        
+            <legend class="payment-details">Payment Details</legend>
+            <label>Card Number:
+                <input type="text" name="cardNumber" required pattern="^\d{16}$">
+            </label>
+            <label>Expiry Date (MM/YY):
+                <input type="text" name="expiry" required pattern="^(0[1-9]|1[0-2])\/(\d{2})$">
+            </label>
+            <label>CVV:
+                <input type="text" name="cvv" required pattern="^\d{3}$">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Address</legend>
+            <label>Street Number:
+                <input type="text" name="streetNumber" required pattern="^\d{1,5}$">
+            </label>
+            <label>Street Name:
+                <input type="text" name="streetName" required pattern="^[a-zA-Z\s]{2,50}$">
+            </label>
+            <label>Suburb:
+                <input type="text" name="suburb" required pattern="^[a-zA-Z\s]{2,50}$">
+            </label>
+            <label>State:
+                <input type="text" name="state" required pattern="^(VIC|NSW|QLD|WA|SA|TAS|ACT|NT)$">
+            </label>
+            <label>Postcode:
+                <input type="text" name="postcode" required pattern="^\d{4}$">
+            </label>
+        </fieldset>
+
+        <button type="submit" class="checkout-button">PURCHASE</button>
+    </form>
+</main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -268,4 +268,28 @@
         font-size: 1.8rem;
         color: black;
     }
+
+    .thank-you-msg {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        gap: 1em;
+    }
+
+    .thank-you-msg > p {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .thank-you-msg > img {
+        width: 4em;
+        height: 4em;
+    }
 }
