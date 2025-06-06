@@ -5,20 +5,22 @@
     Description: CSS stylesheet for laying out html elements and CSS layout methods
 */
 
+/*Flex box for index.html layout*/
 .page-layout {
     display: flex;
     flex-direction: row;
     width: 100vw;
 }
 
+/*Cards for the product list page*/
 .flex-cards {
     width: 70vw;
     height: calc(5 * var(--card-height));
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
-    padding: 24px;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -28,29 +30,31 @@
     color: inherit;
 }
 
+/*Styling for the sidebars on home and product listing pages*/
 .sidebar {
     position: fixed;
     top: 0;
     right: 0;
     width: 30vw;
     height: 100vh;
-    padding: 24px;
+    padding: var(--space-xl);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
 
+/*Styling for main wrapper on product info pages*/
 .product-card {
     display: flex;
     flex-direction: column;
     width: 430px;
     height: 540px;
-    margin: 24px;
-    padding-right: 8px;
+    margin: var(--space-xl);
+    padding-right: var(--space-xs);
     text-wrap: wrap;
     box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
     background-color: var(--color-secondary);
-    border-radius: 12px;
+    border-radius: var(--space-sm);
     justify-items: center;
     align-items: center;
     transition: transform 0.3s ease-in-out;
@@ -75,7 +79,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 3fr;
     grid-template-rows: 20em 8em auto;
-    gap: 48px;
+    gap: var(--space-xxl);
     width: 80vw;
     align-items: start;
 }
@@ -85,23 +89,24 @@
     flex-direction: column;
     width: 80vw;
     margin: 24px;
-    padding: 24px;
+    padding: var(--space-lg);
     grid-row: 1 / 4;
     grid-column: 1 / 4;
     text-wrap: wrap;
     box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
     background-color: var(--color-secondary);
-    border-radius: 12px;
+    border-radius: var(--space-sm);
     justify-items: center;
     align-items: center;
 }
 
+/*Stack styling for text chunks in menu subpages*/
 .stack {
     display: flex;
     flex-direction: column;
     width: auto;
-    margin: 24px;
-    padding: 24px;
+    margin: var(--space-lg);
+    padding: var(--space-lg);
     grid-row: 1 / 4;
     grid-column: 1 / 4;
     text-wrap: wrap;
@@ -125,24 +130,6 @@
     font-size: 1.4rem;
 }
 
-.title-text {
-    font-size: 2rem;
-    margin: 0 auto 0 auto;
-}
-
-.text-column {
-    grid-row: 1 / 4;
-    grid-column: 3 / 4;
-    padding-right: 24px;
-    margin-bottom: 12px;
-}
-
-.product-title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 16px;
-}
-
 .feature-list li {
     margin: 0.5rem 2.5rem;
     font-size: 1rem;
@@ -156,14 +143,15 @@
     flex-direction: column;
     width: 16vw;
     height: 8em;
-    bottom: 24px;
-    right: 24px;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
     background-color: var(--color-secondary);
-    padding: 16px;
-    border-radius: 12px;
+    padding: var(--space-md);
+    border-radius: var(--space-sm);
     box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
 }
 
+/*Styling for quantity box on product infos pages*/
 .quantity-box {
     display: flex;
     width: 100%;
@@ -174,60 +162,18 @@
 
 .quantity-selector {
     align-self: center;
-    font-size: 24px;
+    font-size: var(--space-lg);
 
 }
 
-.minus-icon,
-.plus-icon,
-.remove-icon {
-    width: 48px;
-    height: auto;
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-.minus-icon:hover,
-.plus-icon:hover,
-.remove-icon:hover {
-    background-color: var(--color-secondary);
-}
-
-.minus-icon:active,
-.plus-icon:active,
-.remove-icon:active {
-    background-color: white;;
-}
-
-.add-to-cart {
-    color: black;
-    width: 100%;
-    height: 4em;
-    font-size: 18px;
-    margin-top: auto;
-    margin-bottom: 4px;
-    background-color: var(--color-image-back);
-    border-radius: 8px;
-}
-
-.add-to-cart:hover {
-    color: white;
-    background-color: var(--color-primary);
-}
-
-.add-to-cart:active {
-    color: white;
-    background-color: var(--color-secondary);
-}
-
+/*Styling for slide out menu overlay*/
 .slide-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 50;
+    z-index: 999;
     background: rgba(0, 0, 0, 0.6);
     display: none;
 }
@@ -247,7 +193,7 @@
     height: 100%;
     background-color: rgba(127, 120, 134, 0.85);
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
-    padding: 24px;
+    padding: var(--space-lg);
     display: flex;
     flex-direction: column;
 }
@@ -286,6 +232,7 @@
     color: black;
 }
 
+/*Styling for purchase-successful page thank you message*/
 .thank-you-msg {
     display: flex;
     flex-direction: column;
@@ -310,8 +257,8 @@
     height: 4em;
 }
 
-
-@media (max-width: 600px) {
+/*Styling specifically for mobile devices (under 768 pixels wide)*/
+@media (max-width: 768px) {
     .page-layout {
         display: flex;
         flex-direction: column-reverse;
@@ -324,11 +271,11 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 24px;
-        padding: 24px;
+        gap: var(--space-lg);
+        padding: var(--space-lg);
         box-sizing: border-box;
         overflow-y: auto;
-        padding-top: 0px;
+        padding-top: 0;
     }
 
     .flex-cards a {
@@ -344,8 +291,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: end;
-        padding: 12px;
-        gap: 12px;
+        padding: var(--space-sm);
+        gap: var(--space-sm);
         background: transparent;
         box-shadow: none;
     }
@@ -358,8 +305,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: end;;
-        padding: 12px;
-        gap: 12px;
+        padding: var(--space-sm);
+        gap: var(--space-sm);
         background: transparent;
         box-shadow: none;
     }
@@ -369,12 +316,12 @@
         flex-direction: column;
         width: 46vw;
         height: 50vh;
-        margin: 4px;
-        padding: 8px;
+        margin: var(--space-xxs);
+        padding: var(--space-xs);
         text-wrap: wrap;
         box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
         background-color: var(--color-secondary);
-        border-radius: 12px;
+        border-radius: var(--space-sm);
         justify-items: center;
         align-items: center;
         transition: transform 0.3s ease-in-out;
@@ -388,7 +335,7 @@
         display: grid;
         place-items: center;
         grid-template-columns: 1fr 1fr;
-        column-gap: 0px;
+        column-gap: 0;
     }
 
     .product-card-grid a {
@@ -396,6 +343,7 @@
         color: inherit;
     }
 
+    /*Styling for product listing filtering options on mobile*/
     .sort-tab-mobile {
         width: 45vw;
     }
@@ -409,22 +357,22 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 18em 8em auto;
-        gap: 24px;
-        width: 87vw;
+        gap: var(--space-lg);
+        width: var(--standard-width);
         align-items: start;
     }
 
     .product-info-wrapper {
-        width: 87vw;
+        width: var(--standard-width);
         height: auto;
         margin: 0px 24px 24px 24px;
-        padding: 24px;
+        padding: var(--space-lg);
         text-wrap: wrap;
         grid-column: 1 / 4;
         grid-row: 1 / -1;
         box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
         background-color: var(--color-secondary);
-        border-radius: 12px;
+        border-radius: var(--space-sm);
         justify-items: center;
         align-items: center;
     }
@@ -433,8 +381,8 @@
         display: flex;
         flex-direction: column;
         width: auto;
-        margin: 24px;
-        padding: 24px;
+        margin: var(--space-lg);
+        padding: var(--space-lg);
         grid-row: 1 / 4;
         grid-column: 1 / 4;
         text-wrap: wrap;
@@ -446,7 +394,7 @@
     }
 
     .stack > p + p {
-        margin-top: 24px;
+        margin-top: var(--space-lg);
     }
 
     .stack > h3 {
@@ -463,13 +411,13 @@
         grid-row: 3 / 4;
         grid-column: 1 / 4;
         padding: 0px 24px 0px 24px;
-        margin-bottom: 12px;
+        margin-bottom: var(--space-sm);
     }
 
     .product-title {
         font-size: 28px;
         font-weight: bold;
-        margin-bottom: 16px;
+        margin-bottom: var(--space-md);
     }
 
     .feature-list li {
@@ -484,13 +432,13 @@
         display: flex;
         flex-direction: row;
         align-self: center;
-        width: 87vw;
-        margin-top: 12px;
+        width: var(--standard-width);
+        margin-top: var(--space-sm);
         margin-left: 40px;
         height: 6em;
         background-color: var(--color-secondary);
-        padding: 16px;
-        border-radius: 12px;
+        padding: var(--space-md);
+        border-radius: var(--space-sm);
         box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
         align-items: center;
         justify-content: center;
@@ -505,56 +453,13 @@
 
     .quantity-selector {
         align-self: center;
-        font-size: 24px;
+        font-size: var(--space-lg);
 
-    }
-
-    .minus-icon,
-    .plus-icon,
-    .remove-icon {
-        width: 48px;
-        height: auto;
-        background: none;
-        border: none;
-        padding: 0;
-    }
-
-    .minus-icon:hover,
-    .plus-icon:hover,
-    .remove-icon:hover {
-        background-color: var(--color-secondary);
-    }
-
-    .minus-icon:active,
-    .plus-icon:active,
-    .remove-icon:active {
-        background-color: white;;
     }
 
     .page-wrapper {
         display: flex;
         flex-direction: column;
-    }
-
-    .add-to-cart {
-        color: black;
-        width: 100%;
-        height: 4em;
-        font-size: 18px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        background-color: var(--color-image-back);
-        border-radius: 8px;
-    }
-
-    .add-to-cart:hover {
-        color: white;
-        background-color: var(--color-primary);
-    }
-
-    .add-to-cart:active {
-        color: white;
-        background-color: var(--color-secondary);
     }
 
     .slide-menu-overlay {
@@ -563,7 +468,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: 50;
+        z-index: 999;
         background: rgba(0, 0, 0, 0.6);
         display: none;
     }
@@ -583,7 +488,7 @@
         height: 100%;
         background-color: rgba(127, 120, 134, 0.85);
         box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
-        padding: 24px;
+        padding: var(--space-lg);
         display: flex;
         flex-direction: column;
     }

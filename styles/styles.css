@@ -23,6 +23,7 @@ html {
     font-style: normal;
 }
 
+/*Root variable declarations to be used throughout the multiple CSS files*/
 :root {
     font-size: 16px;
     --main-font: Montserrat, sans-serif;
@@ -30,18 +31,19 @@ html {
     --head-font-size: 24px;
     --subheading-font-size: 24px;
     --card-height: 600px;
+    --standard-width: 87vw;
     --space-unit: 1em;
     --space-xxs: 4px;
     --space-xs: 8px;
-    --space-sm: 16px;
-    --space-md: 32px;
-    --space-lg: 48px;
-    --space-xl: 64px;
-    --space-xxl: 96px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 36px;
+    --space-xxl: 48px;
+    --space-xxxl: 64px;
 
     --color-primary: #6216a2;
     --color-secondary: rgba(33, 23, 49, 0.4);
-
     --color-text: rgb(202, 175, 224);
     --color-text2: rgb(150, 132, 165);
     --color-dot: #0c0c0c;
@@ -49,35 +51,28 @@ html {
     --color-image-back: rgba(255, 255, 255, 0.8);
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-  position: relative;
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     :root {
         --space-unit: 0.75em;
     }
 }
 
+/*Styling for the cards on the home page*/
 .home-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 24px;
+    gap: var(--space-lg);
     
     width: 100%;
     height: var(--card-height);
-    padding: 0 24px;
+    padding: 0 var(--space-lg);
     
     box-sizing: border-box;
     box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
     background-color: var(--color-secondary);
-    border-radius: 12px;
+    border-radius: var(--space-sm);
     overflow: hidden;
     z-index: 0;
 }
@@ -88,24 +83,56 @@ html, body {
     justify-content: center;
 }
 
-.subheading {
-    font-family: var(--main-font);
-    font-size: var(--subheading-font-size);
-    margin-top: 18px;
-    margin-bottom: 24px;
-}
-
+/*Standard styling for HTML elements and text classes*/
 body {
     color: var(--color-text);
     font-size: var(--main-font-size);
     line-height: 1.6;
 }
 
+p {
+    font-family: var(--main-font);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.title-text {
+    font-size: 2rem;
+    margin: 0 auto 0 auto;
+}
+
+.text-column {
+    grid-row: 1 / 4;
+    grid-column: 3 / 4;
+    padding-right: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.product-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: var(--space-md);
+}
+
+.subheading {
+    font-family: var(--main-font);
+    font-size: var(--subheading-font-size);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+/*Styling for text in product list cards*/
 .cover-title {
-    font-size: 24px;
+    font-size: var(--head-font-size);
     font-family: var(--main-font);
     margin: auto auto 12px 24px;
-    padding-right: 8px;
+    padding-right: var(--space-xs);
     text-wrap: wrap;
 }
 
@@ -115,42 +142,29 @@ body {
     margin: auto auto 12px 24px;
 }
 
-.item-cover-image-lg {
-    width: 10em;
-    margin-top: auto;
-}
-
-.item-cover-image-md {
-    width: 14em;
-    margin-top: auto;
-}
-
-.item-cover-image {
-    width: 18em;
-    margin-top: auto;
-}
-
 .cover-price {
     display: flex;
     font-family: var(--main-font);
-    font-size: 48px;
+    font-size: var(--space-xxl);
     color: white;
     font-weight: bolder;
     align-self: center;
     margin: auto auto 12px 24px;
-    padding-bottom: 12px;
+    padding-bottom: var(--space-sm);
 }
 
+/*Styling for text in product info page*/
 .product-price {
     display: flex;
     font-family: var(--main-font);
-    font-size: 48px;
+    font-size: var(--space-xxl);
     color: white;
     font-weight: bolder;
     margin-top: 24px;
     justify-self: right;
 }
 
+/*Styling for sort selectors on product list page*/
 a {
     text-decoration: none;
     color: inherit;
@@ -166,23 +180,23 @@ a:active > .search-text{
     color: white;
 }
 
-
-@media (max-width: 600px) {
+/*Styling specifically for mobile devices (under 768 pixels wide)*/
+@media (max-width: 768px) {
     .home-card {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 24px;
+        gap: var(--space-lg);
         
-        width: 87vw;
+        width: var(--standard-width);
         height: var(--card-height);
-        padding: 0 24px;
+        padding: 0 var(--space-lg);;
         
         box-sizing: border-box;
         box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
         background-color: var(--color-secondary);
-        border-radius: 12px;
+        border-radius: var(--space-sm);
         overflow: hidden;
         z-index: 0;
     }
@@ -196,8 +210,8 @@ a:active > .search-text{
     .subheading {
         font-family: var(--main-font);
         font-size: var(--subheading-font-size);
-        margin-top: 18px;
-        margin-bottom: 24px;
+        margin-top: var(--space-md);
+        margin-bottom: var(--space-lg);
     }
 
     body {
@@ -207,52 +221,37 @@ a:active > .search-text{
     }
 
     .cover-title {
-        font-size: 16px;
+        font-size: var(--main-font-size);
         font-family: var(--main-font);
-        margin: 16px;
+        margin: var(--main-font-size);
 
     }
 
     .short-desc {
-        font-size: 12px;
+        font-size: var(--space-sm);
         font-family: var(--main-font);
-        margin: 16px;
+        margin: var(--space-md);
     }
     
     .cover-price {
         display: flex;
         font-family: var(--main-font);
-        font-size: 24px;
+        font-size: var(--main-font-size);
         color: white;
         font-weight: bolder;
         align-self: start;
-        margin: 12px;
+        margin: var(--space-sm);
         margin-top: auto;
-        padding-bottom: 12px;
-    }
-
-    .item-cover-image-lg {
-        width: 4em;
-        margin-top: auto;
-    }
-
-    .item-cover-image-md {
-        width: 6em;
-        margin-top: auto;
-    }
-
-    .item-cover-image {
-        width: 7em;
-        margin-top: auto;
+        padding-bottom: var(--space-sm);
     }
 
     .product-price {
         display: flex;
         font-family: var(--main-font);
-        font-size: 48px;
+        font-size: var(--head-font-size);
         color: white;
         font-weight: bolder;
-        margin-top: 24px;
+        margin-top: var(--space-lg);
         justify-self: right;
     }
 

@@ -5,27 +5,28 @@
     Description: CSS stylesheet specifically for the general styling of the cart, checkout and purchase-successful pages
 */
 
+/*Styling for cart page including items, quantities, subtotals and wrappers*/
 .cart-page {
     padding: 32px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space-lg);
 }
 
 .cart-items {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space-lg);
 }
 
 .cart-item {
     display: flex;
     background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 16px;
+    border-radius: var(--space-sm);
+    padding: var(--space-md);
     align-items: center;
-    gap: 16px;
+    gap: var(--space-md);
     box-shadow: inset 2px 2px 6px black, inset -2px -2px 6px black;
 }
 
@@ -33,18 +34,11 @@
     width: 85vw;
 }
 
-.cart-item-image {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
 .cart-details {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-xxs);
 }
 
 .cart-name {
@@ -60,18 +54,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-xs);
 }
 
 .quantity-box {
     display: flex;
     align-items: left;
     justify-content: left;
-    gap: 8px;
+    gap: var(--space-xs);
 }
 
 .quantity-display {
-    min-width: 24px;
+    min-width: var(--space-lg);
     text-align: center;
 }
 
@@ -87,9 +81,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px;
+    padding: var(--space-lg);
     background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    border-radius: var(--space-sm);
     box-shadow: inset 2px 2px 6px black, inset -2px -2px 6px black;
 }
 
@@ -109,17 +103,6 @@
     color: var(--color-text2);
 }
 
-.checkout-button {
-    background-color: var(--color-image-back);
-    color: black !important;
-    border: none;
-    border-radius: 8px;
-    padding: 16px 32px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
 .checkout-button:hover {
     background-color: var(--color-primary);
     color: white;
@@ -132,16 +115,17 @@
     max-width: none;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space-lg);
 }
 
+/*Checkout page form styling*/
 .checkout-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 32px;
-    border-radius: 12px;
+    border-radius: var(--space-sm);
     box-shadow: inset 2px 2px 6px black, inset -2px -2px 6px black;
     width: 100%;
 }
@@ -152,13 +136,13 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--space-md);
 }
 
 .checkout-form legend {
     font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: var(--space-xs);
     color: white;
 }
 
@@ -170,9 +154,9 @@
 }
 
 .checkout-form input {
-    margin-top: 4px;
-    padding: 12px;
-    border-radius: 8px;
+    margin-top: var(--space-xxs);
+    padding: var(--space-sm);
+    border-radius: var(--space-xs);
     border: none;
     font-size: 1rem;
     background-color: rgba(255, 255, 255, 0.15);
@@ -192,11 +176,11 @@
 .checkout-form .checkout-button {
     grid-column: 1 / -1;
     justify-self: flex-end;
-    margin-top: 24px;
+    margin-top: var(--space-lg);
     background-color: var(--color-image-back);
     color: black;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--space-xs);
     padding: 16px 32px;
     font-weight: bold;
     font-size: 1rem;
@@ -212,7 +196,8 @@
     margin-top: 30px;
 }
 
-@media (max-width: 600px) {
+/*Styling specifically for mobile devices (under 768 pixels wide)*/
+@media (max-width: 768px) {
     .checkout-form {
         grid-template-columns: 1fr;
     }
@@ -222,23 +207,23 @@
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: var(--space-lg);
     }
 
     .cart-items {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: var(--space-lg);
     }
 
     .cart-item {
         display: flex;
         background-color: rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 16px;
+        border-radius: var(--space-sm);
+        padding: var(--space-md);
         align-items: center;
         justify-content: end;
-        gap: 16px;
+        gap: var(--space-md);
         box-shadow: inset 2px 2px 6px black, inset -2px -2px 6px black;
     }
 
@@ -248,18 +233,11 @@
         justify-content: end;
     }
 
-    .cart-item-image {
-        width: 100px;
-        height: 100px;
-        object-fit: contain;
-        border-radius: 8px;
-    }
-
     .cart-details {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: var(--space-xxs);
     }
 
     .cart-name {
@@ -275,7 +253,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: var(--space-xs);
     }
 
     .quantity-box {
@@ -285,7 +263,7 @@
     }
 
     .quantity-display {
-        min-width: 24px;
+        min-width: var(--space-lg);
         text-align: center;
     }
 
@@ -293,9 +271,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 24px;
+        padding: var(--space-lg);
         background-color: rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
+        border-radius: var(--space-sm);
         box-shadow: inset 2px 2px 6px black, inset -2px -2px 6px black;
     }
 
@@ -315,19 +293,6 @@
         color: var(--color-text2);
     }
 
-    .checkout-button {
-        width: 32vw;
-        background-color: var(--color-image-back);
-        color: black !important;
-        border: none;
-        border-radius: 8px;
-        padding: 16px 16px;
-        font-weight: bold;
-        font-size: 1rem;
-        cursor: pointer;
-        align-self: end;
-    }
-
     .checkout-button:hover {
         background-color: var(--color-primary);
         color: white;
@@ -340,20 +305,20 @@
         max-width: none;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: var(--space-lg);
     }
 
     .checkout-form {
         display: flex;
         flex-direction: column;
-        width: 87vw;
+        width: var(--standard-width);
         margin-top: 0px;
-        margin-bottom: 24px;
+        margin-bottom: var(--space-lg);
         align-self: center;
         gap: 32px;
         background-color: rgba(255, 255, 255, 0.05);
         padding: 32px;
-        border-radius: 12px;
+        border-radius: var(--space-sm);
         box-shadow: inset 2px 2px 6px black, inset -2px -2px 6px black;
     }
 
@@ -369,7 +334,7 @@
     .checkout-form legend {
         font-size: 1.4rem;
         font-weight: bold;
-        margin-bottom: 8px;
+        margin-bottom: var(--space-xs);
         color: white;
     }
 
@@ -381,9 +346,9 @@
     }
 
     .checkout-form input {
-        margin-top: 4px;
-        padding: 12px;
-        border-radius: 8px;
+        margin-top: var(--space-xxs);
+        padding: var(--space-sm);
+        border-radius: var(--space-xs);
         border: none;
         font-size: 1rem;
         background-color: rgba(255, 255, 255, 0.15);
@@ -407,7 +372,7 @@
         background-color: var(--color-image-back);
         color: black;
         border: none;
-        border-radius: 8px;
+        border-radius: var(--space-xs);
         padding: 16px 16px;
         font-weight: bold;
         font-size: 1rem;
