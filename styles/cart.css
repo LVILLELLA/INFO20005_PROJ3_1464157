@@ -104,7 +104,7 @@
 
 .checkout-button {
     background-color: var(--color-image-back);
-    color: black;
+    color: black !important;
     border: none;
     border-radius: 8px;
     padding: 16px 32px;
@@ -311,7 +311,7 @@
     .checkout-button {
         width: 32vw;
         background-color: var(--color-image-back);
-        color: black;
+        color: black !important;
         border: none;
         border-radius: 8px;
         padding: 16px 16px;
@@ -327,7 +327,7 @@
     }
 
     .checkout-page {
-        padding: 32px;
+        padding: 0px;
         margin: 0 auto;
         width: 100vw;
         max-width: none;
@@ -337,14 +337,17 @@
     }
 
     .checkout-form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        width: 87vw;
+        margin-top: 0px;
+        margin-bottom: 24px;
+        align-self: center;
         gap: 32px;
         background-color: rgba(255, 255, 255, 0.05);
         padding: 32px;
         border-radius: 12px;
         box-shadow: inset 2px 2px 6px black, inset -2px -2px 6px black;
-        width: 100%;
     }
 
     .checkout-form fieldset {
@@ -393,12 +396,12 @@
     .checkout-form .checkout-button {
         grid-column: 1 / -1;
         justify-self: flex-end;
-        margin-top: 24px;
+        margin-top: 12px;
         background-color: var(--color-image-back);
         color: black;
         border: none;
         border-radius: 8px;
-        padding: 16px 32px;
+        padding: 16px 16px;
         font-weight: bold;
         font-size: 1rem;
         cursor: pointer;
