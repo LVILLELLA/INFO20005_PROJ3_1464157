@@ -321,6 +321,7 @@
         padding: 24px;
         box-sizing: border-box;
         overflow-y: auto;
+        padding-top: 0px;
     }
 
     .flex-cards a {
@@ -335,8 +336,23 @@
         height: auto;
         flex-direction: row;
         align-items: center;
+        justify-content: end;
+        padding: 12px;
+        gap: 12px;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .sidebar-large {
+        display: flex;
+        position: static;
+        width: 100vw;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
         justify-content: end;;
         padding: 12px;
+        gap: 12px;
         background: transparent;
         box-shadow: none;
     }
@@ -344,10 +360,10 @@
     .product-card {
         display: flex;
         flex-direction: column;
-        width: 430px;
-        height: 540px;
-        margin: 24px;
-        padding-right: 8px;
+        width: 46vw;
+        height: 50vh;
+        margin: 4px;
+        padding: 8px;
         text-wrap: wrap;
         box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
         background-color: var(--color-secondary);
@@ -365,6 +381,7 @@
         display: grid;
         place-items: center;
         grid-template-columns: 1fr 1fr;
+        column-gap: 0px;
     }
 
     .product-card-grid a {
@@ -379,6 +396,15 @@
         gap: 48px;
         width: 80vw;
         align-items: start;
+    }
+
+    .sort-tab-mobile {
+        width: 45vw;
+    }
+
+    .filter-tab-mobile {
+        width: 45vw;
+
     }
 
     .product-info-wrapper {
@@ -413,12 +439,8 @@
         align-items: left;        
     }
 
-    .stack > p + h3 {
-        margin-top: 2rem;
-    }
-
-    .stack > p + h3 {
-        margin-top: 2rem;
+    .stack > p + p {
+        margin-top: 24px;
     }
 
     .stack > h3 {

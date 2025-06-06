@@ -20,6 +20,7 @@
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
+    margin-right: 12px;
 }
 
 .search-suggestions:empty {
@@ -81,6 +82,17 @@
     box-shadow: inset -1px -1px 2px rgb(180, 180, 180, 0.5), inset 2px 2px 6px black;
 }
 
+.sort-button {
+    box-shadow: none;
+    border: none;
+    background: none;
+}
+
+.filter-button {
+    box-shadow: none;
+    border: none;
+    background: none;
+}
 
 .icon-image {
     width: 80px;
@@ -335,7 +347,7 @@ nav > div > .icon-button{
     background: red;
     color: white;
     font-size: 0.8rem;
-    padding: 2px 6px;
+    padding: 2px 8px;
     border-radius: 50%;
     font-weight: bold;
 }
@@ -424,6 +436,27 @@ nav > div > .icon-button{
         box-shadow: inset -1px -1px 2px rgb(180, 180, 180, 0.5), inset 2px 2px 6px black;
     }
 
+    .sort-tab-mobile > .icon-button,
+    .filter-tab-mobile > .icon-button {
+        height: 24px;
+        margin-top: 12px;
+    }
+
+    .sort-icon {
+        box-shadow: none;
+        border: none;
+        background: none;
+        display: flex;
+        width: 100%;
+    }
+
+    .filter-icon {
+        box-shadow: none;
+        border: none;
+        background: none;
+        display: flex;
+        width: 100%;
+    }
 
     .icon-image {
         width: 48px;
@@ -468,30 +501,25 @@ nav > div > .icon-button{
         margin: 0px;
     }
 
-    .sidebar-buttons > .icon-button{
-        margin-left: 12px;
-    }
-
     .dot-nav {
         display: none !important;
     }
 
     .sort-dot-nav {
-        padding: 12px;
+        margin: 8px 0px 0px 0px;
         list-style: none;
         width: auto;
         align-items: center;
-        margin: 12px;
         display: flex;
         flex-direction: column;
         background-color: var(--color-dot-back);
-        border-radius: 32px;
+        border-radius: 16px;
         align-items: start;
     }
     .sort-dot {
         display: inline-block;
-        width: 18px;
-        height: 18px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         background-color: var(--color-dot);
         margin: 4px;
@@ -499,21 +527,20 @@ nav > div > .icon-button{
     }
 
     .filter-dot-nav {
-        padding: 12px;
+        margin: 8px 0px 0px 0px;
         list-style: none;
         width: auto;
         align-items: center;
-        margin: 12px;
         display: flex;
         flex-direction: column;
         background-color: var(--color-dot-back);
-        border-radius: 32px;
+        border-radius: 16px;
         align-items: start;
     }
     .filter-dot {
         display: inline-block;
-        width: 18px;
-        height: 18px;
+        width: 12px;
+        height: 12px;
         border-radius: 20%;
         border-color: var(--color-dot);
         border-width: 3px;
@@ -526,12 +553,19 @@ nav > div > .icon-button{
     .sort-link {
         display: flex;
         flex-direction: row;
+        width: 100%;
     }
 
     .search-options {
-        margin-left: auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        position: static;
+        width: auto;
+        gap: 12px;
+        background: transparent;
+        box-shadow: none;
     }
 
     .search-text {
@@ -540,7 +574,8 @@ nav > div > .icon-button{
         display: flex;
         flex-direction: row;
         width: 16em;
-        padding-left: 24px;
+        padding-left: 8px;
+        font-size: 13px;
     }
 
     .filter-link {
@@ -565,10 +600,10 @@ nav > div > .icon-button{
     }
 
     .sub-icon-image {
-        width: 36px;
+        width: 24px;
         height: auto;
-        align-self: start;
-        margin-left: 16px;
+        align-self: center;
+        margin: 4px;
     }
     
     .plus-button,
@@ -577,7 +612,7 @@ nav > div > .icon-button{
         background: none;
         border: none;
         padding: 0;
-        margin: 12px;;
+        margin: 8px;
         box-shadow: none;
         outline: none;
         display: flex;

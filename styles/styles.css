@@ -56,119 +56,119 @@ html, body {
     }
 }
 
-@media (min-width: 601px) {
-    .home-card {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 24px;
-        
-        width: 100%;
-        height: var(--card-height);
-        padding: 0 24px;
-        
-        box-sizing: border-box;
-        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
-        background-color: var(--color-secondary);
-        border-radius: 12px;
-        overflow: hidden;
-        z-index: 0;
-    }
-
-    .home-card-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .subheading {
-        font-family: var(--main-font);
-        font-size: var(--subheading-font-size);
-        margin-top: 18px;
-        margin-bottom: 24px;
-    }
-
-    body {
-        color: var(--color-text);
-        font-size: var(--main-font-size);
-        line-height: 1.6;
-    }
-
-    .cover-title {
-        font-size: var(--head-font-size);
-        font-family: var(--main-font);
-        margin: auto auto 12px 24px;
-    }
-
-    .short-desc {
-        font-size: var(--main-font-size);
-        font-family: var(--main-font);
-        margin: auto auto 12px 24px;
-    }
-
-    .item-cover-image-lg {
-        width: 10em;
-        margin-top: auto;
-    }
-
-    .item-cover-image-md {
-        width: 14em;
-        margin-top: auto;
-    }
-
-    .item-cover-image {
-        width: 18em;
-        margin-top: auto;
-    }
-
-    .cover-price {
-        display: flex;
-        font-family: var(--main-font);
-        font-size: 48px;
-        color: white;
-        font-weight: bolder;
-        align-self: center;
-        margin: auto auto 12px 24px;
-        padding-bottom: 12px;
-    }
-
-    .product-price {
-        display: flex;
-        font-family: var(--main-font);
-        font-size: 48px;
-        color: white;
-        font-weight: bolder;
-        margin-top: 24px;
-        justify-self: right;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    a:visited,
-    a:hover {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    a:active > .search-text{
-        color: white;
-    }
-
+.home-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    
+    width: 100%;
+    height: var(--card-height);
+    padding: 0 24px;
+    
+    box-sizing: border-box;
+    box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+    background-color: var(--color-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 0;
 }
+
+.home-card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subheading {
+    font-family: var(--main-font);
+    font-size: var(--subheading-font-size);
+    margin-top: 18px;
+    margin-bottom: 24px;
+}
+
+body {
+    color: var(--color-text);
+    font-size: var(--main-font-size);
+    line-height: 1.6;
+}
+
+.cover-title {
+    font-size: 16px;
+    font-family: var(--main-font);
+    margin: auto auto 12px 24px;
+    padding-right: 8px;
+    text-wrap: wrap;
+}
+
+.short-desc {
+    font-size: var(--main-font-size);
+    font-family: var(--main-font);
+    margin: auto auto 12px 24px;
+}
+
+.item-cover-image-lg {
+    width: 10em;
+    margin-top: auto;
+}
+
+.item-cover-image-md {
+    width: 14em;
+    margin-top: auto;
+}
+
+.item-cover-image {
+    width: 18em;
+    margin-top: auto;
+}
+
+.cover-price {
+    display: flex;
+    font-family: var(--main-font);
+    font-size: 48px;
+    color: white;
+    font-weight: bolder;
+    align-self: center;
+    margin: auto auto 12px 24px;
+    padding-bottom: 12px;
+}
+
+.product-price {
+    display: flex;
+    font-family: var(--main-font);
+    font-size: 48px;
+    color: white;
+    font-weight: bolder;
+    margin-top: 24px;
+    justify-self: right;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:active > .search-text{
+    color: white;
+}
+
 
 @media (max-width: 600px) {
     .home-card {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
         gap: 24px;
         
-        width: 100%;
+        width: 87vw;
         height: var(--card-height);
         padding: 0 24px;
         
@@ -200,41 +200,43 @@ html, body {
     }
 
     .cover-title {
-        font-size: var(--head-font-size);
+        font-size: 16px;
         font-family: var(--main-font);
-        margin: auto auto 12px 24px;
+        margin: 16px;
+
     }
 
     .short-desc {
-        font-size: var(--main-font-size);
+        font-size: 12px;
         font-family: var(--main-font);
-        margin: auto auto 12px 24px;
+        margin: 16px;
+    }
+    
+    .cover-price {
+        display: flex;
+        font-family: var(--main-font);
+        font-size: 24px;
+        color: white;
+        font-weight: bolder;
+        align-self: start;
+        margin: 12px;
+        margin-top: auto;
+        padding-bottom: 12px;
     }
 
     .item-cover-image-lg {
-        width: 10em;
+        width: 4em;
         margin-top: auto;
     }
 
     .item-cover-image-md {
-        width: 14em;
+        width: 6em;
         margin-top: auto;
     }
 
     .item-cover-image {
-        width: 18em;
+        width: 7em;
         margin-top: auto;
-    }
-
-    .cover-price {
-        display: flex;
-        font-family: var(--main-font);
-        font-size: 48px;
-        color: white;
-        font-weight: bolder;
-        align-self: center;
-        margin: auto auto 12px 24px;
-        padding-bottom: 12px;
     }
 
     .product-price {
