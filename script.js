@@ -1,3 +1,10 @@
+/*
+    Author: Luca Villella
+    Date: 6 June 2025
+    File: script.js
+    Description: JavaScript script for website functionality, such as product sort and filter, search, and user detail validation
+*/
+
 // Load header and initialize search
 function loadHeader() {
     fetch('header.html')

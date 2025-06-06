@@ -1,3 +1,10 @@
+/*
+    Author: Luca Villella
+    Date: 6 June 2025
+    File: cart.css
+    Description: CSS stylesheet specifically for the general styling of the cart, checkout and purchase-successful pages
+*/
+
 .cart-page {
     padding: 32px;
     margin: 0 auto;

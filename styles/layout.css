@@ -1,3 +1,10 @@
+/*
+    Author: Luca Villella
+    Date: 6 June 2025
+    File: layout.css
+    Description: CSS stylesheet for laying out html elements and CSS layout methods
+*/
+
 .page-layout {
     display: flex;
     flex-direction: row;
