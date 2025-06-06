@@ -11,8 +11,8 @@ function loadHeader() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
-            setupMenuToggle(); // <- move here, after injection
-            initialiseSearch(); // if needed
+            setupMenuToggle();
+            initialiseSearch();
         })
         .catch(error => console.error('Header load failed:', error));
 }
@@ -291,8 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const plusButton = document.querySelector('.plus-button');
     const minusButton = document.querySelector('.minus-button');
     const addToCartButton = document.querySelector('.add-to-cart');
-
-    // Use the product name as the ID
     const productName = addToCartButton?.dataset.name;
 
     if (!quantityDisplay || !plusButton || !minusButton || !addToCartButton || !productName) return;
@@ -314,7 +312,6 @@ document.addEventListener('DOMContentLoaded', () => {
     addToCartButton.addEventListener('click', () => {
         const cart = JSON.parse(localStorage.getItem('cart')) || {};
 
-        // Use productName as the unique key
         if (cart[productName]) {
         cart[productName] += quantity;
         } else {
