@@ -259,7 +259,7 @@
     .quantity-box {
         display: flex;
         justify-content: end;
-        gap: 0px;
+        gap: 0;
     }
 
     .quantity-display {

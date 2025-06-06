@@ -79,7 +79,7 @@
 .header-buttons {
     display: flex;
     flex-direction: row;
-    max-height: var(--space-xxl);
+    max-height: var(--space-xxxl);
     gap: var(--space-sm);
     margin-top: var(--space-sm);
 }
