@@ -52,7 +52,7 @@
     margin: var(--space-xl);
     padding-right: var(--space-xs);
     text-wrap: wrap;
-    box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+    box-shadow: var(--card-shadow);
     background-color: var(--color-secondary);
     border-radius: var(--space-sm);
     justify-items: center;
@@ -93,7 +93,7 @@
     grid-row: 1 / 4;
     grid-column: 1 / 4;
     text-wrap: wrap;
-    box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+    box-shadow: var(--card-shadow);
     background-color: var(--color-secondary);
     border-radius: var(--space-sm);
     justify-items: center;
@@ -110,7 +110,7 @@
     grid-row: 1 / 4;
     grid-column: 1 / 4;
     text-wrap: wrap;
-    box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+    box-shadow: var(--card-shadow);
     background-color: var(--color-secondary);
     border-radius: 12px;
     justify-items: center;
@@ -148,7 +148,7 @@
     background-color: var(--color-secondary);
     padding: var(--space-md);
     border-radius: var(--space-sm);
-    box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+    box-shadow: var(--card-shadow);
 }
 
 /*Styling for quantity box on product infos pages*/
@@ -319,7 +319,7 @@
         margin: var(--space-xxs);
         padding: var(--space-xs);
         text-wrap: wrap;
-        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+        box-shadow: var(--card-shadow);
         background-color: var(--color-secondary);
         border-radius: var(--space-sm);
         justify-items: center;
@@ -370,7 +370,7 @@
         text-wrap: wrap;
         grid-column: 1 / 4;
         grid-row: 1 / -1;
-        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+        box-shadow: var(--card-shadow);
         background-color: var(--color-secondary);
         border-radius: var(--space-sm);
         justify-items: center;
@@ -386,7 +386,7 @@
         grid-row: 1 / 4;
         grid-column: 1 / 4;
         text-wrap: wrap;
-        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+        box-shadow: var(--card-shadow);
         background-color: var(--color-secondary);
         border-radius: 12px;
         justify-items: center;
@@ -439,7 +439,7 @@
         background-color: var(--color-secondary);
         padding: var(--space-md);
         border-radius: var(--space-sm);
-        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+        box-shadow: var(--card-shadow);
         align-items: center;
         justify-content: center;
     }

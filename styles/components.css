@@ -147,7 +147,7 @@ nav > div > .icon-button{
     flex-direction: column;
     background-color: var(--color-dot-back);
     border-radius: 40px;
-    box-shadow: inset -1px -1px 2px rgb(180, 180, 180, 0.5), inset 2px 2px 6px black;
+    box-shadow: var(--dot-nav-shadow);
 }
 
 .dot {

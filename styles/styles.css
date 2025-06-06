@@ -42,6 +42,9 @@ html {
     --space-xxl: 48px;
     --space-xxxl: 64px;
 
+    --card-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+    --dot-nav-shadow: inset -1px -1px 2px rgb(180, 180, 180, 0.5), inset 2px 2px 6px black;
+
     --color-primary: #6216a2;
     --color-secondary: rgba(33, 23, 49, 0.4);
     --color-text: rgb(202, 175, 224);
@@ -70,7 +73,7 @@ html {
     padding: 0 var(--space-lg);
     
     box-sizing: border-box;
-    box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+    box-shadow: var(--card-shadow);
     background-color: var(--color-secondary);
     border-radius: var(--space-sm);
     overflow: hidden;
@@ -194,7 +197,7 @@ a:active > .search-text{
         padding: 0 var(--space-lg);;
         
         box-sizing: border-box;
-        box-shadow: inset 4px 4px 12px black, inset -4px -4px 12px black;
+        box-shadow: var(--card-shadow);
         background-color: var(--color-secondary);
         border-radius: var(--space-sm);
         overflow: hidden;
